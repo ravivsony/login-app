@@ -1,10 +1,10 @@
-import "./App.css";
+
 import React from "react";
+import Routes from "./router";
+import axios from "axios";
+import {config} from "./utils/config"
 
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
-import Login from "./pages/login";
-import HomePage from "./pages";
-
+axios.defaults.baseURL = config.API_URL
 
 function App() {
   const auth = Boolean(localStorage.getItem("itemsJson"))
@@ -13,21 +13,8 @@ function App() {
   return (
     <>
       
-      <Router>
-        <Switch>
-          <Route exact path="/" >
-            <HomePage />
-          </Route>
-          <Route exact path="/login">
-            {
-              auth ?   <Login component /> : <Redirect path="/" />
-             }
-            
-          
-          </Route>
-        </Switch>
-      </Router>
-      ;
+      
+      <Routes isAuth={auth} />
     </>
   );
 }

@@ -1,0 +1,19 @@
+@import "./variables";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+* {
+	top: 0;
+	bottom: 0;
+	box-sizing: border-box;
+}
+
+p {
+	font-family: Poppins, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: 100;
+	line-height: 18px;
+	text-decoration: none solid rgb((63), 66, 84);
+	text-align: left;
+	word-spacing: 0px;
+	color: #ffffff;
+}
